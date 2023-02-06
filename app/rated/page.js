@@ -1,11 +1,15 @@
-import Movie from "./movie";
+import React from "react";
+import Movie from "../movie";
 
-export default async function Home() {
+async function Trendy() {
+  const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
+  // https://api.themoviedb.org/3/movie/top_rated?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US
   const data = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
   );
+
   const response = await data.json();
-  console.log(response,"respo nse")
+  console.log(response.results, "response");
 
   return (
     <main>
@@ -27,3 +31,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export default Trendy;

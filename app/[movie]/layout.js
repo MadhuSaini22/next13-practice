@@ -1,4 +1,3 @@
-import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -15,17 +14,8 @@ export default function RootLayout({ children }) {
             <li className="mr-6">
               <a href="/">Home</a>
             </li>
-            <li className="mr-6">
+            <li>
               <a href="/about">About</a>
-            </li>
-            <li className="mr-6">
-              <a href="/upcoming">Upcoming</a>
-            </li>
-            <li className="mr-6">
-              <a href="/rated">Top Rated</a>
-            </li>
-            <li className="mr-6">
-              <a href="/trendy">Trendy</a>
             </li>
           </ul>
         </nav>
