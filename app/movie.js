@@ -5,7 +5,6 @@ export default function Movie({ key, title, id, poster_path, release_date }) {
   const path = "https://image.tmdb.org/t/p/original";
   const img = path + poster_path;
 
-  console.log(img,"")
   return (
     <div>
       <h1>{title}</h1>

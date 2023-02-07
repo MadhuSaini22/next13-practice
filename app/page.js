@@ -2,10 +2,9 @@ import Movie from "./movie";
 
 export default async function Home() {
   const data = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    `${process.env.REACT_APP_API_SLUG}upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}${process.env.REACT_APP_IMAGE_END_SLUG}`
   );
   const response = await data.json();
-  console.log(response,"respo nse")
 
   return (
     <main>

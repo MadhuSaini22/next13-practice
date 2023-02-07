@@ -1,35 +1,45 @@
-import React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import Movie from "../movie";
 
-async function Trendy() {
-  const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
-  // https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US
-  const data = await fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
-  );
+export default function Upcoming() {
+  const [upcomingMovies, setUpcomingMovies] = useState([]);
 
-  const response = await data.json();
-  console.log(response.results, "response");
+  useEffect(() => {
+    console.log("Hello useEffect");
 
+    // fetch(
+    //   `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&${process.env.REACT_APP_IMAGE_END}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data, "data");
+    //     setUpcomingMovies(data.results);
+    //   });
+  });
+  console.log("effect rule");
   return (
-    <main>
-      <div className="grid gap-4 py-12 grid-cols-fluid">
-        {response.results.map((movie) => (
-          <div className="flex">
-            <div>
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                title={movie.title}
-                poster_path={movie.poster_path}
-                release_date={movie.release_date}
-              />
+    <div>
+      <h1>Hello</h1>
+      <main>
+        {/* <div className="grid gap-4 py-12 grid-cols-fluid">
+          sdgdfh
+          {upcomingMovies.map((movie) => (
+            <div className="flex" key={movie.id}>
+              <div>
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  poster_path={movie.poster_path}
+                  release_date={movie.release_date}
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </main>
+          ))}
+        </div> */}
+      </main>
+    </div>
   );
 }
-
-export default Trendy;

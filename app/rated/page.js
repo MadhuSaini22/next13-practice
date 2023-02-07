@@ -2,10 +2,8 @@ import React from "react";
 import Movie from "../movie";
 
 async function Trendy() {
-  const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
-  // https://api.themoviedb.org/3/movie/top_rated?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US
   const data = await fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    `${process.env.REACT_APP_API_SLUG}top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}${process.env.REACT_APP_IMAGE_END_SLUG}`
   );
 
   const response = await data.json();
