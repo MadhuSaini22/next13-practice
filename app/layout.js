@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <head />
 
       <body className="mx-32 my-12">
-        <nav>
+        <nav className="bg-blue-500 p-4 text-white">
           <ul className="flex">
             <li className="mr-6">
               <a href="/">Home</a>

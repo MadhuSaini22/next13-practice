@@ -3,7 +3,7 @@ import Movie from "../movie";
 
 async function Trendy() {
   const data = await fetch(
-    `${process.env.REACT_APP_API_SLUG}popular?api_key=${process.env.REACT_APP_TMDB_KEY}${process.env.REACT_APP_IMAGE_END_SLUG}`
+    `${process.env.REACT_APP_API_SLUG}upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&${process.env.REACT_APP_IMAGE_END}`
   );
 
   const response = await data.json();
